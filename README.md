@@ -325,7 +325,7 @@ After starting the service, access http://localhost:5000 to use the web interfac
 3. **Document Processing**: Upload txt/docx files and request "Summarize the content"
    ![Document Processing](Example/read_txt.png)
 
-4. **Code Execution**: "Calculate the first 10 Fibonacci numbers"
+4. **Code Execution**: "Build an LLM API client."
    ![Code Execution](Example/code_test.gif)
 
 ### Command Line Interface
