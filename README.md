@@ -8,6 +8,10 @@ A production-grade intelligent Agent system featuring deterministic planning + p
 ![Python](https://img.shields.io/badge/python-3.9+-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
 
+## 🖼️ Web Interface Preview
+
+![Web Interface](Example/start.png)
+
 ---
 
 ## 📑 Table of Contents
@@ -311,10 +315,18 @@ After starting the service, access http://localhost:5000 to use the web interfac
 - 🎨 Modern minimalist interface
 
 **Usage Examples:**
+
 1. **Search Information**: "Query weather in Hangzhou"
+   ![Search Demo](Example/search_test.gif)
+
 2. **File Analysis**: Upload an image and ask "What is this?"
+   ![Image Analysis](Example/read_jpg.png)
+
 3. **Document Processing**: Upload txt/docx files and request "Summarize the content"
+   ![Document Processing](Example/read_txt.png)
+
 4. **Code Execution**: "Calculate the first 10 Fibonacci numbers"
+   ![Code Execution](Example/code_test.gif)
 
 ### Command Line Interface
 
