@@ -1,0 +1,45 @@
+# Core Framework
+langgraph>=0.0.39
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-community>=0.0.43
+
+# AI Models
+google-generativeai>=0.3.2
+
+# Vector Database & RAG
+weaviate-client>=4.5.4
+llama-index>=0.11.0
+
+# External Tools - Search & Web
+tavily-python>=0.3.3
+firecrawl-py>=0.0.15
+e2b-code-interpreter>=2.3.0
+
+# New Tools - Browser & Database
+playwright>=1.40.0
+sqlalchemy>=2.0.25
+psycopg2-binary>=2.9.9  # PostgreSQL
+pymysql>=1.1.0  # MySQL
+# Run: playwright install  # 首次安装后需执行
+
+# Extended Tools - Image, PDF, Data
+pypdf2>=3.0.0  # PDF 处理
+reportlab>=4.0.0  # PDF 生成
+pandas>=2.0.0  # 数据分析
+numpy>=1.24.0  # 数值计算
+openpyxl>=3.1.0  # Excel 支持
+python-docx>=1.1.0  # Word 文档处理
+
+# Utilities
+httpx>=0.27.0
+Pillow>=10.0.1
+tenacity>=8.3.0
+pydantic>=2.8.0
+python-dotenv>=1.0.1
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9  # 文件上传支持
+aiofiles>=24.1.0  # 异步文件操作
+pytest>=7.4.0
+json-repair>=0.2.0

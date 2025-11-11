@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  max-ai:
+    build: .
+    container_name: max-ai
+    ports:
+      - "5000:5000"
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - TAVILY_API_KEY=${TAVILY_API_KEY:-}
+      - E2B_API_KEY=${E2B_API_KEY:-}
+      - FIRECRAWL_API_KEY=${FIRECRAWL_API_KEY:-}
+      - WEAVIATE_URL=${WEAVIATE_URL:-}
+      - WEAVIATE_API_KEY=${WEAVIATE_API_KEY:-}
+    volumes:
+      - ./data:/app/data
+      - ./.env:/app/.env:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # 可选的 Weaviate 服务（用于长期记忆）
+  weaviate:
+    image: semitechnologies/weaviate:latest
+    container_name: max-ai-weaviate
+    ports:
+      - "8080:8080"
+      - "50051:50051"
+    environment:
+      QUERY_DEFAULTS_LIMIT: 25
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
+      PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
+      DEFAULT_VECTORIZER_MODULE: 'none'
+      ENABLE_MODULES: ''
+      CLUSTER_HOSTNAME: 'node1'
+    volumes:
+      - weaviate_data:/var/lib/weaviate
+    profiles:
+      - weaviate
+    restart: unless-stopped
+
+volumes:
+  weaviate_data:
+
